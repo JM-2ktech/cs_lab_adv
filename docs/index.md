@@ -1,6 +1,6 @@
 ---
 title: 중급 — HR 채용 자동화
-nav_order: 12
+nav_order: 13
 has_children: true
 ---
 
