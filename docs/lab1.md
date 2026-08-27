@@ -1,6 +1,5 @@
 ---
 title: 중급 Lab 1. 환경 초기화
-parent: 중급 — HR 채용 자동화
 nav_order: 2
 ---
 
@@ -60,25 +59,25 @@ nav_order: 2
 
 1. 브라우저에서 [https://make.powerautomate.com](https://make.powerautomate.com/) 으로 이동합니다. 우측 상단 **환경 선택기**를 클릭해 **2026 에이전트 교육 및 지원**을 선택합니다.
     
-    ![환경 선택기에서 교육용 환경 선택](../../assets/advanced/lab1/01.png)
+    ![환경 선택기에서 교육용 환경 선택](../assets/lab1/01.png)
 
 2. 왼쪽 메뉴에서 **솔루션**을 클릭합니다.
 
-    ![왼쪽 메뉴의 '솔루션' 항목](../../assets/advanced/lab1/02.png)
+    ![왼쪽 메뉴의 '솔루션' 항목](../assets/lab1/02.png)
 
 3. **`2026 Agent Intermediate Solution`** 솔루션을 찾아 클릭해 엽니다.
 
-    ![2026 Agent Intermediate Solution 솔루션 클릭](../../assets/advanced/lab1/03.png)
+    ![2026 Agent Intermediate Solution 솔루션 클릭](../assets/lab1/03.png)
 
 4. 솔루션 안에서 **`SP List 사전 데이터 복제`** 흐름을 찾아 클릭합니다.
 
-    ![흐름 더보기 → 다른 이름으로 저장](../../assets/advanced/lab1/04.png)
+    ![흐름 더보기 → 다른 이름으로 저장](../assets/lab1/04.png)
 
 5. 흐름 관리 화면에서 **다른 이름으로 저장**을 선택하고 **`SP List 사전 데이터 복제 (본인이름)`** 으로 입력한 뒤 저장합니다.
 
-    ![이름 입력 후 저장](../../assets/advanced/lab1/05.png)
+    ![이름 입력 후 저장](../assets/lab1/05.png)
 
-    ![이름 입력 후 저장](../../assets/advanced/lab1/05b.png)
+    ![이름 입력 후 저장](../assets/lab1/05b.png)
 
     {: .note }
     **다른 이름으로 저장**하면 이 흐름의 소유자가 내 계정이 됩니다. 원본 흐름은 그대로 남아 다른 수강생도 같은 방식으로 복사할 수 있습니다.
@@ -88,16 +87,16 @@ nav_order: 2
     {: .important }
     복사한 클라우드 흐름을 활성화하지 않으면 흐름 테스트를 수행할 수 없습니다. 반드시 **활성화 후**에 테스트를 수행합니다.
 
-    ![편집 → 테스트 → 수동 → 실행](../../assets/advanced/lab1/06.png)
-    ![편집 → 테스트 → 수동 → 실행](../../assets/advanced/lab1/06b.png)
+    ![편집 → 테스트 → 수동 → 실행](../assets/lab1/06.png)
+    ![편집 → 테스트 → 수동 → 실행](../assets/lab1/06b.png)
 
     
 
 7. 테스트는 수동선택, 연결 확인 후 **`생성할 리스트 이름을 입력`**합니다. 생성 실행이 **성공**으로 끝나는지 확인합니다 (각 단계에 초록 체크).
 
-    ![실행 성공 — 각 단계 초록 체크](../../assets/advanced/lab1/07.png)
-    ![실행 성공 — 각 단계 초록 체크](../../assets/advanced/lab1/07b.png)
-    ![실행 성공 — 각 단계 초록 체크](../../assets/advanced/lab1/07c.png)
+    ![실행 성공 — 각 단계 초록 체크](../assets/lab1/07.png)
+    ![실행 성공 — 각 단계 초록 체크](../assets/lab1/07b.png)
+    ![실행 성공 — 각 단계 초록 체크](../assets/lab1/07c.png)
 
     {: .important }
     이때 지정한 리스트 이름이 오늘 교육중 사용하게 될 리스트 이름입니다. 타인과 겹치지 않게 본인의 이름을 넣어서 생성하세요. 
@@ -106,7 +105,7 @@ nav_order: 2
 
     [M365 Copilot Go+ 프로그램 쉐어포인트 사이트컨텐츠 링크](https://cjworld.sharepoint.com/teams/M365CopilotGOTeamsCJ/_layouts/15/viewlsts.aspx)
 
-    ![실행 성공 — 각 단계 초록 체크](../../assets/advanced/lab1/08.png)
+    ![실행 성공 — 각 단계 초록 체크](../assets/lab1/08.png)
 
     {: .important }
     이곳에 생성한 리스트 이름과. 유형 `목록`을 확인하시고 사전데이터 42인이 잘 보이는지 테스트해주세요.

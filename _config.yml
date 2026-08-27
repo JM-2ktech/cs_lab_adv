@@ -1,0 +1,62 @@
+title: "Copilot Studio Lab — 중급"
+description: >-
+  Copilot Studio 중급 교안. HR 채용 자동화를 소재로 커넥터·에이전트 흐름·
+  승인·토픽을 랩 7개(230분)로 다루는 2일차 과정입니다.
+
+# ⚠️ 아직 배포하지 않는다. 본문에 고객사명이 남아 있어 탈CJ 이전에는 공개 대상이 아니다.
+baseurl: "/cs_lab_adv"
+url: ""
+
+theme: just-the-docs
+plugins:
+  - jekyll-feed
+
+# 코드블록 복사 버튼 — 테마 기본값도 true지만, 이 교안은 복붙이 주 동작이라 명시해 둔다.
+# 버튼 스타일(상시 노출·다크 배경 대응)은 _sass/custom/custom.scss에 있다.
+enable_copy_code_button: true
+
+search_enabled: true
+search:
+  heading_level: 2
+  previews: 3
+
+mermaid:
+  version: "10.9.1"
+
+aux_links:
+  "Microsoft Learn Copilot Studio":
+    - "https://learn.microsoft.com/ko-kr/microsoft-copilot-studio/"
+
+nav_sort: order
+color_scheme: light
+
+# ★ 필수 — 전 페이지 기본 레이아웃 (없으면 테마 미적용 = 맨 HTML 렌더링)
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+# Just the Docs callouts — 본문의 {: .note } / {: .warning } / {: .important } / {: .time } 렌더링 정의
+callouts_level: quiet
+callouts:
+  note:
+    title: 팁
+    color: blue
+  time:
+    title: 시간
+    color: green
+  warning:
+    title: 주의
+    color: red
+  important:
+    title: 핵심
+    color: yellow
+
+# 빌드 제외
+exclude:
+  - _instructions/
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor/

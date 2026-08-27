@@ -1,0 +1,36 @@
+{%- comment -%}
+  한글 검색 복구 (2026-08-26)
+
+  증상: 상단 검색창에 한글을 넣으면 결과가 0건이었다. 영문(`MCP`·`Copilot`)만 나왔다.
+
+  원인: lunr 2.3.9 의 기본 trimmer 가 토큰 앞뒤의 `\W` 를 걷어내는데,
+  자바스크립트의 `\w` 는 `[A-Za-z0-9_]` 라서 **한글이 통째로 비문자로 취급된다.**
+  「복리후생」이 trimmer 를 지나면 빈 문자열이 되어 색인에서도 질의에서도 사라진다.
+  검색 설정(`search_enabled`)이나 색인 생성(`search-data.json`, 189항목)은 멀쩡했다.
+
+  고침: 같은 일을 하되 유니코드 글자·숫자를 남기는 trimmer 로 바꾼다.
+  구두점을 떼는 원래 의도는 그대로다.
+
+  ⚠️ 이 파일은 lunr 로드 뒤·색인 생성 전에 끼어드는 자리다.
+     테마가 `head.html` 에서 `lunr.min.js` → `just-the-docs.js` → `head_custom.html`
+     순으로 부르고, 색인은 `DOMContentLoaded` 에서야 만들어진다. 이 순서가 전제다.
+
+  실측(2026-08-26, 로컬 색인 189항목): 에이전트 0→99건 · 지침 0→72 · 토픽 0→52 ·
+  복리후생 0→17 · 인터미션 0→9 · 가드레일 0→8. 영문은 변화 없음(MCP 14, Copilot 51).
+
+  ⚠️ 남는 한계: 검색어는 **앞에서부터** 맞아야 한다(`wildcard.TRAILING`).
+     「복리후생」은 잡히지만 「후생」은 안 잡힌다. 이걸 고치려면 테마의
+     `assets/js/just-the-docs.js` 를 통째로 덮어써야 해서 여기서는 손대지 않았다.
+{%- endcomment -%}
+<script>
+  (function () {
+    if (!window.lunr) return;
+    delete lunr.Pipeline.registeredFunctions['trimmer'];
+    lunr.trimmer = function (token) {
+      return token.update(function (s) {
+        return s.replace(/^[^\p{L}\p{N}]+/u, '').replace(/[^\p{L}\p{N}]+$/u, '');
+      });
+    };
+    lunr.Pipeline.registerFunction(lunr.trimmer, 'trimmer');
+  })();
+</script>

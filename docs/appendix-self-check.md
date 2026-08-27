@@ -1,6 +1,5 @@
 ---
 title: 중급 부록. 자가진단 에이전트
-parent: 중급 — HR 채용 자동화
 nav_order: 10
 ---
 
@@ -46,11 +45,11 @@ nav_order: 10
 
 1. Copilot Studio 왼쪽 메뉴에서 **+ 만들기** → **새 에이전트**를 선택합니다. 이름을 `자가진단 에이전트`로 지정합니다.
 
-    ![새 에이전트 만들기 — 이름 지정](../../assets/advanced/appendix/01.png)
+    ![새 에이전트 만들기 — 이름 지정](../assets/appendix/01.png)
 
 2. 에이전트 설정에서 **생성형 오케스트레이션(generative orchestration)**이 켜져 있는지 확인합니다. (MCP 도구를 쓰려면 반드시 켜져 있어야 합니다.)
 
-    ![생성형 오케스트레이션 켜짐 확인](../../assets/advanced/appendix/02.png)
+    ![생성형 오케스트레이션 켜짐 확인](../assets/appendix/02.png)
 
 3. **Knowledge**에 강의 사이트를 추가합니다. 웹사이트 소스로 아래 URL을 입력하고, **이름**과 **설명**도 함께 채웁니다.
 
@@ -63,9 +62,9 @@ nav_order: 10
       응답이 정상인지 판단할 때 1차 기준으로 참고한다.
       ```
 
-    ![Knowledge 추가 — 웹사이트 URL 입력](../../assets/advanced/appendix/03.png)
-    ![Knowledge 추가 — 이름 입력](../../assets/advanced/appendix/03b.png)
-    ![Knowledge 추가 — 설명 입력](../../assets/advanced/appendix/03c.png)
+    ![Knowledge 추가 — 웹사이트 URL 입력](../assets/appendix/03.png)
+    ![Knowledge 추가 — 이름 입력](../assets/appendix/03b.png)
+    ![Knowledge 추가 — 설명 입력](../assets/appendix/03c.png)
 
     {: .note }
     이 사이트가 "정답지" 역할을 합니다. 자가진단 에이전트는 여기 적힌 랩 지침과 실제 동작을 대조합니다. 설명에 "1차 기준으로 참고한다"를 넣어둔 건 에이전트가 지식·도구 중 무엇을 먼저 쓸지 판단할 때 라우팅 정확도를 높이기 위해서입니다.
@@ -81,22 +80,22 @@ nav_order: 10
       ```
     - **인증**: 없음 (Unauthenticated) — MS가 공개·무료로 제공하는 공식 문서 검색 서버라 로그인이 필요 없습니다.
 
-    ![Add a tool — Model Context Protocol 선택](../../assets/advanced/appendix/04.png)
-    ![MCP 서버 이름 입력](../../assets/advanced/appendix/04b.png)
-    ![MCP 서버 URL 입력](../../assets/advanced/appendix/04c.png)
-    ![MCP 서버 설명 입력](../../assets/advanced/appendix/04d.png)
-    ![MCP 인증 방식 — 없음 선택](../../assets/advanced/appendix/04e.png)
-    ![MCP 서버 추가 완료](../../assets/advanced/appendix/04f.png)
+    ![Add a tool — Model Context Protocol 선택](../assets/appendix/04.png)
+    ![MCP 서버 이름 입력](../assets/appendix/04b.png)
+    ![MCP 서버 URL 입력](../assets/appendix/04c.png)
+    ![MCP 서버 설명 입력](../assets/appendix/04d.png)
+    ![MCP 인증 방식 — 없음 선택](../assets/appendix/04e.png)
+    ![MCP 서버 추가 완료](../assets/appendix/04f.png)
 
     {: .note }
     이 서버는 Microsoft가 직접 운영하는 공개 엔드포인트입니다. 별도 자격 증명 없이 누구나 붙일 수 있고, Copilot Studio 공식 문서에도 사용 사례로 나와 있습니다.
 
 5. **Agents** 페이지 → **Add other agents** → **같은 환경의 Copilot Studio 에이전트에 연결**을 선택합니다.
 
-    ![Agents 페이지 — Add other agents](../../assets/advanced/appendix/05.png)
-    ![같은 환경의 Copilot Studio 에이전트에 연결 선택](../../assets/advanced/appendix/05b.png)
-    ![연결할 에이전트 목록에서 선택](../../assets/advanced/appendix/05c.png)
-    ![연결 완료 — Agents 목록에 표시](../../assets/advanced/appendix/05d.png)
+    ![Agents 페이지 — Add other agents](../assets/appendix/05.png)
+    ![같은 환경의 Copilot Studio 에이전트에 연결 선택](../assets/appendix/05b.png)
+    ![연결할 에이전트 목록에서 선택](../assets/appendix/05c.png)
+    ![연결 완료 — Agents 목록에 표시](../assets/appendix/05d.png)
 
     {: .important }
     목록에 여러 사람의 에이전트가 뜰 수 있습니다. **반드시 본인이 만든 면접관 에이전트를 선택하세요.** (예시로 보이는 이름과 다르더라도, 본인이 Lab 2에서 이름 붙인 그 에이전트가 맞습니다.)

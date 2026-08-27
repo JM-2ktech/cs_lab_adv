@@ -1,6 +1,5 @@
 ---
 title: 중급 부록. 용어집
-parent: 중급 — HR 채용 자동화
 nav_order: 12
 ---
 

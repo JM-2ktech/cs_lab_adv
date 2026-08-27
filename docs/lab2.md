@@ -1,6 +1,5 @@
 ---
 title: 중급 Lab 2. 에이전트 구성
-parent: 중급 — HR 채용 자동화
 nav_order: 3
 ---
 
@@ -42,13 +41,13 @@ nav_order: 3
 {: .note }
 지식 소스에 등장하는 회사명·수치·인물은 모두 **가상**입니다. 실제 기업과 무관합니다.
 
-> [직무기술서 다운로드](../../assets/advanced/download/직무기술서(JD).pdf)
+> [직무기술서 다운로드](../assets/download/직무기술서(JD).pdf)
 >
-> [채용 가이드 문서 다운로드](../../assets/advanced/download/채용%20가이드%20문서.pdf)
+> [채용 가이드 문서 다운로드](../assets/download/채용%20가이드%20문서.pdf)
 >
-> [평가 루브릭 다운로드](../../assets/advanced/download/평가%20루브릭.pdf)
+> [평가 루브릭 다운로드](../assets/download/평가%20루브릭.pdf)
 >
-> [회사 지침 문서 다운로드](../../assets/advanced/download/회사%20지침%20문서.pdf)
+> [회사 지침 문서 다운로드](../assets/download/회사%20지침%20문서.pdf)
 
 
 **지식 4종 PDF**를 내려받아 둡니다 — 채용 가이드 / 직무기술서(JD) / 회사 지침 / 평가 루브릭.
@@ -68,27 +67,27 @@ nav_order: 3
 
 1. [https://copilotstudio.microsoft.com](https://copilotstudio.microsoft.com/)에 접속하여, 왼쪽 메뉴 **[에이전트](./glossary.html#term-agent)** → **빈 에이전트**를 클릭합니다.
 
-    ![에이전트 → 빈 에이전트](../../assets/advanced/lab2/01.png)
+    ![에이전트 → 빈 에이전트](../assets/lab2/01.png)
 
 2. **이름**에 `면접관 에이전트`를 입력합니다. 솔루션이 Lab1에서 작업한 솔루션이 되도록 선택합니다. 에이전트 이름에 영문, 숫자가 없다면 스키마 이름이 공란이 됩니다. 직접 영문명을 입력해서 에이전트를 만듭니다.
 
     {: .important }
     **Lab 1에서 연 그 솔루션을 선택하세요.** 오늘 만드는 흐름과 에이전트가 한 솔루션에 모여 있어야 Lab 6·7에서 서로를 도구로 붙일 때 헤매지 않습니다. 기본 솔루션에 만들면 나중에 옮기기 번거롭습니다.
 
-    ![이름·솔루션 선택](../../assets/advanced/lab2/02.png)
+    ![이름·솔루션 선택](../assets/lab2/02.png)
 
 3. **설명**에 `승인된 지원자를 조회·평가하고 면접 질문을 돕는 채용 도우미`를 입력합니다.
 
-    ![설명 입력](../../assets/advanced/lab2/03.png)
+    ![설명 입력](../assets/lab2/03.png)
 
-    ![설명 입력 b](../../assets/advanced/lab2/03b.png)
+    ![설명 입력 b](../assets/lab2/03b.png)
 
 
 4. **설정 → 생성형 AI → 지식**에서 **근거 없는 응답 허용**이 **켜기(ON)** 인지 확인합니다(기본값 유지). 같은 화면의 **에이전트 메시지에 대한 사용자 반응 수집** 과 **웹의 정보 사용**은 끄기로 변경합니다.
 
-    ![근거 없는 응답 허용 설정](../../assets/advanced/lab2/04.png)
+    ![근거 없는 응답 허용 설정](../assets/lab2/04.png)
 
-    ![근거 없는 응답 허용 설정 b](../../assets/advanced/lab2/04b.png)
+    ![근거 없는 응답 허용 설정 b](../assets/lab2/04b.png)
 
     {: .note }
     **근거 없는 응답 허용** 토글을 켜 둬야 도구가 없는 지금도 에이전트가 **"그건 실시간 데이터라 도구 없이 확인 못 한다"고 스스로 경계를 설명**합니다(아래 시연). 끄면 그런 응답이 폴백(오류 토픽)으로 차단됩니다.
@@ -96,11 +95,11 @@ nav_order: 3
 
 5. **[지식(Knowledge)](./glossary.html#term-knowledge)** 탭에서 **+ 추가 → 파일 업로드**를 선택합니다.
 
-    ![지식 추가 → 파일 업로드](../../assets/advanced/lab2/05.png)
+    ![지식 추가 → 파일 업로드](../assets/lab2/05.png)
 
 6. `지식 문서 4종`을 업로드 합니다.
 
-    ![지식 문서 업로드](../../assets/advanced/lab2/06.png)
+    ![지식 문서 업로드](../assets/lab2/06.png)
 
 7. 업로드 동작 중 각 문서에 **설명**을 정의합니다.
     - `채용 가이드 문서.pdf` → `공통 평가기준과 경력 레벨 정의`
@@ -108,16 +107,16 @@ nav_order: 3
     - `회사 지침 문서.pdf` → `인재상 4축 및 채용 원칙`
     - `평가 루브릭.pdf` → `지원자 적합도를 등급으로 매기는 채점 규칙`
 
-    ![지식 4종 업로드 완료](../../assets/advanced/lab2/07.png)
+    ![지식 4종 업로드 완료](../assets/lab2/07.png)
 
-    ![Knowledge 4종 업로드 완료 b](../../assets/advanced/lab2/07b.png)
+    ![Knowledge 4종 업로드 완료 b](../assets/lab2/07b.png)
 
     {: .note }
     **이력서 원문은 지식에 넣지 않습니다.** 수백 개를 [RAG](./glossary.html#abbr-rag)에 올리면 검색이 [코퍼스](./glossary.html#term-corpus) 전체에서 일어나 **동명이인·교차 오염**이 생깁니다. 이력서는 대상 데이터라 목록에 두고, 원문은 필요할 때 1건만 링크로 가져옵니다(Lab 3). 평가의 일상 재료는 적재 흐름이 만든 **이력서요약**입니다 — "요약=기본 / 원문=필요할 때만".
 
 8. 4종 상태가 모두 **Ready**가 될 때까지 기다립니다. 대기 중 아래 지침 작성을 진행하고 돌아와 확인합니다.**[지침](./glossary.html#term-instructions)** 영역에 아래를 그대로 붙여넣습니다. (지침은 **[Markdown](./glossary.html#term-markdown) 문법**으로 작성합니다 — 짧고 구조적으로.)
 
-    ![지식 4종 Ready](../../assets/advanced/lab2/08.png)
+    ![지식 4종 Ready](../assets/lab2/08.png)
 
     ```
     ## 역할
@@ -132,7 +131,7 @@ nav_order: 3
     내부 도구·시스템 식별자(Qv2 등)는 노출하지 않는다.
     ```
 
-    ![지침 3블록 붙여넣기](../../assets/advanced/lab2/08b.png)
+    ![지침 3블록 붙여넣기](../assets/lab2/08b.png)
 
     지침의 **자료** 블록에서 [목록](./glossary.html#term-list)은 Lab 1에서 생성한 SharePoint 지원자 목록을 가리킵니다 — [지식](./glossary.html#term-knowledge)(기준 문서)와 목록(실시간 데이터)을 에이전트가 명확히 구분하도록 지침에서 명시합니다.
 
@@ -141,7 +140,7 @@ nav_order: 3
 
 9. 지침 저장 완료 후 저장 **게시(Publish)**합니다.
 
-    ![지침 저장 + 게시](../../assets/advanced/lab2/09.png)
+    ![지침 저장 + 게시](../assets/lab2/09.png)
 
     {: .warning }
     지침을 바꿔도 동작이 그대로면 **게시 여부**를 먼저 확인하세요. 저장만 하고 게시 안 해 옛 동작이 유지되는 경우가 흔합니다. 또한 에이전트 설정 변경 후  테스트시 **새 테스트 세션 시작** 을 클릭해서 컨텍스트 초기화가 필요합니다.
@@ -151,36 +150,36 @@ nav_order: 3
     {: .note }
     지식 인덱싱이 아직 완료되지 않았다면 **아래 테스트는 건너뛰고 Lab 3을 먼저 진행**하세요. Lab 3에서 커넥터를 설정하는 동안 인덱싱이 완료되며, 이후 돌아와서 테스트해도 됩니다.
 
-    ![채용 기준 답변](../../assets/advanced/lab2/10.png)
+    ![채용 기준 답변](../assets/lab2/10.png)
 
-    ![채용 기준 답변 b](../../assets/advanced/lab2/10b.png)
+    ![채용 기준 답변 b](../assets/lab2/10b.png)
 
 11. `지원자 적합도는 어떻게 평가해?` → 평가 루브릭 근거 답변.
 
-    ![적합도 평가 기준 답변](../../assets/advanced/lab2/11.png)
+    ![적합도 평가 기준 답변](../assets/lab2/11.png)
 
-    ![적합도 평가 기준 답변 b](../../assets/advanced/lab2/11b.png)
+    ![적합도 평가 기준 답변 b](../assets/lab2/11b.png)
 
 12. `우리 회사 인재상이 뭐야?` → 회사 지침 근거 답변.
 
-    ![인재상 답변](../../assets/advanced/lab2/12.png)
+    ![인재상 답변](../assets/lab2/12.png)
 
-    ![인재상 답변 b](../../assets/advanced/lab2/12b.png)
+    ![인재상 답변 b](../assets/lab2/12b.png)
 
 13. `이력서에서 무엇을 추출해야 해?` → 평가 루브릭의 추출 스키마 근거 답변.
 
-    ![이력서 추출 항목 답변](../../assets/advanced/lab2/13.png)
+    ![이력서 추출 항목 답변](../assets/lab2/13.png)
 
-    ![이력서 추출 항목 답변 b](../../assets/advanced/lab2/13b.png)
+    ![이력서 추출 항목 답변 b](../assets/lab2/13b.png)
 
     {: .note }
     "무엇을 추출하느냐"는 곧 적재 흐름이 만든 데이터의 스키마인데, 그 정의가 **[루브릭](./glossary.html#term-rubric) 안에** 있습니다(평가 축 ↔ 추출 필드 1:1). 에이전트가 자기 적재 기준을 **메타적으로** 설명하는 셈입니다.
 
 14. `김지훈 지원했어? 지금 상태가 어때?` 와 `승인된 지원자 목록 보여줘` 를 입력합니다. 에이전트가 **답하지 못하고**, 지침 덕분에 "실시간 데이터라 도구가 없어 확인 불가"라고 **경계를 스스로 설명**하는지 확인합니다.
 
-    ![경계 설명 응답](../../assets/advanced/lab2/14.png)
+    ![경계 설명 응답](../assets/lab2/14.png)
 
-    ![경계 설명 응답 b](../../assets/advanced/lab2/14b.png)
+    ![경계 설명 응답 b](../assets/lab2/14b.png)
 
 ---
 

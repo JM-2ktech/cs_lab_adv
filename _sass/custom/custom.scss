@@ -1,0 +1,206 @@
+// ============================================
+// 커스텀 스타일 (Just the Docs 확장 포인트)
+// ============================================
+// cs_lab_v2(중급)에서 그대로 재사용 — 도메인 무관한 범용 스타일이라 수정 없이 이식.
+
+// 빌드 강도 배지 (*텍스트*{: .label .label-xxx } 표기 보정)
+// - kramdown 인라인 IAL이 em 태그로 변환되어 이탤릭이 걸리는 것 제거
+// - 크기: 테마 기본 .75rem → .6rem (custom.scss가 테마 뒤에 로드되어 동순위 !important를 이김)
+em.label {
+  font-style: normal;
+}
+
+// 테마 규칙이 .label:not(g) (구체성 0,1,1)라 .label(0,1,0)로는 못 이김 — 동일 구체성으로 맞춰 후순위 승리
+.label:not(g) {
+  font-size: 0.7rem !important;
+}
+
+// ============================================
+// 코드 폰트 — 테마의 모노스페이스를 시스템 폰트로 덮는다
+// ============================================
+// 테마는 base.scss의 `code { font-family: $mono-font-family }`로
+// "SFMono-Regular", Menlo, Consolas, monospace 를 건다.
+// 그런데 이 교안의 코드블록·인라인 코드는 대부분 한국어 문장이다
+// (지침 블록, 붙여넣을 프롬프트, 메일 템플릿). 모노스페이스는 한글에서
+// 자간이 어색하고 가독성이 떨어져 본문과 같은 계열로 통일한다.
+// custom.scss가 테마 뒤에 로드되므로 같은 구체성(0,0,1)으로도 이긴다.
+code,
+pre,
+.highlight,
+.highlight pre,
+.highlight code {
+  font-family: system-ui, -apple-system, "Segoe UI", "Malgun Gothic",
+    "Apple SD Gothic Neo", sans-serif;
+}
+
+// ============================================
+// 코드블록 — 다크 테마 (Catppuccin Mocha 팔레트)
+// ============================================
+// 폰트 스택: D2Coding(설치된 경우) → Cascadia Code → Consolas → 시스템 모노
+// 가로 스크롤 제거: pre-wrap + break-word
+
+// 외부 래퍼만 시각 컨테이너 — 배경·라운딩·클리핑 담당
+// position: relative = 복사 버튼(absolute)의 기준점. 테마도 걸지만 명시해 둔다.
+.main-content div.highlighter-rouge {
+  background: #1e1e2e;
+  border-radius: 8px;
+  margin: 1.2rem 0;
+  padding: 0;
+  border: none;
+  overflow: hidden;
+  position: relative;
+}
+
+// ============================================
+// 코드블록 복사 버튼 — 다크 배경에 맞춰 상시 노출
+// ============================================
+// 테마 기본값은 opacity:0(코드블록에 호버해야 나타남) + fill:$body-text-color(어두운 색).
+// 위에서 코드블록 배경을 #1e1e2e로 바꾼 탓에 두 조건이 겹쳐 사실상 보이지 않았다.
+// 이 교안은 지침·프롬프트 복붙이 주된 동작이고 수강생이 버튼을 찾다 막히므로 항상 보이게 한다.
+// (버튼 자체는 테마 JS가 런타임에 생성한다 — 정적 HTML에는 없다)
+// opacity로 흐리게 하면 아이콘 색까지 같이 죽어 회색으로 보인다.
+// 투명도는 1로 고정하고 색·배경으로만 강약을 준다.
+.main-content div.highlighter-rouge > button {
+  opacity: 1;
+  width: auto;
+  height: auto;
+  top: 6px;
+  right: 6px;
+  padding: 7px 9px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  transition: background 0.15s ease, border-color 0.15s ease;
+
+  // ★ 아이콘 색은 fill이 아니라 color가 정한다.
+  // 심볼(#svg-copy) 내부 <svg>에 fill="currentColor"가 속성으로 박혀 있어서
+  // 바깥 svg에 건 fill은 path까지 닿지 않는다. 테마의 color:#e6e1e8(연회색)가
+  // 살아남아 회색으로 보였던 원인. color를 흰색으로 덮어야 한다.
+  color: #ffffff;
+
+  svg {
+    fill: currentColor;
+    width: 16px;
+    height: 16px;
+    display: block;
+  }
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+
+  &:focus {
+    outline: 2px solid #89b4fa;
+    outline-offset: 1px;
+  }
+}
+
+// 중간 div.highlight — 투명, 여백 없음 (테마 특이도 0,0,2 압도용으로 0,1,2)
+.main-content div.highlighter-rouge div.highlight {
+  background: transparent !important;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+}
+
+// pre — 패딩·폰트·색상만
+.main-content .highlight pre,
+.main-content .highlight pre.highlight {
+  background: transparent !important;
+  color: #cdd6f4 !important;
+  font-size: 0.75rem;
+  line-height: 1.65;
+  padding: 14px 16px;
+  padding-right: 48px; // 우상단 복사 버튼 자리 확보 — 첫 줄이 버튼 밑으로 들어가지 않게
+  border-radius: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-x: hidden;
+  border: none;
+  margin: 0;
+}
+
+// code 안의 em 곱연산 방지 — 0.75em×0.75em = 9px 되는 것 차단
+.main-content .highlight pre code {
+  font-size: 0.75rem;
+  background: transparent;
+  padding: 0;
+  border: none;
+}
+
+// Rouge 구문 강조 스팬 → 다크 배경 재정의
+.main-content .highlight span { color: #cdd6f4; }
+.main-content .highlight .c,
+.main-content .highlight .c1,
+.main-content .highlight .cm  { color: #6c7086; }  // 주석 (회색)
+.main-content .highlight .k,
+.main-content .highlight .kd  { color: #89b4fa; }  // 키워드 (파랑)
+.main-content .highlight .s,
+.main-content .highlight .s1,
+.main-content .highlight .s2  { color: #a6e3a1; }  // 문자열 (초록)
+.main-content .highlight .o   { color: #89dceb; }  // 연산자 (하늘)
+.main-content .highlight .mf,
+.main-content .highlight .mi  { color: #fab387; }  // 숫자 (주황)
+.main-content .highlight .n,
+.main-content .highlight .na,
+.main-content .highlight .nb  { color: #cdd6f4; }  // 이름 (기본)
+.main-content .highlight .p   { color: #cdd6f4; }  // 구두점
+
+// ============================================
+// 본문 스크린샷 이미지 — 구분용 테두리·그림자·여백
+// ============================================
+// .main-content img = 본문 콘텐츠 이미지만(헤더/사이드바 아이콘 제외).
+// 다중 이미지 스텝에서 이미지끼리 시각적으로 분리되도록.
+.main-content img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  margin: 0.6rem auto 1.2rem; // 좌우 auto = 가운데 정렬
+}
+
+// ============================================
+// 번호 목록의 start 속성 — 테마 카운터가 무시하는 것을 되살린다
+// ============================================
+// 테마는 `.main-content ol { list-style-type: none; counter-reset: step-counter }` 로
+// 번호를 지우고 `li::before { content: counter(step-counter) }` 로 다시 그린다.
+// 이 방식은 HTML의 start 속성을 보지 않는다. 그래서 랩을 여러 절로 쪼개면
+// `{: start="15" }` 를 붙여 <ol start="15"> 가 나와도 화면에는 1부터 찍힌다.
+//
+// 실제로 깨져 있던 곳
+//   - docs/lab4.md          4단 구성 (start 15 / 24 / 29)
+//   - docs/advanced/lab7.md 절이 14개 (start 13 ~ 63)
+// 두 랩 모두 "8번에서 본", "13번의 카드" 같은 상호참조를 본문 전체에서 쓰므로
+// 화면 번호가 어긋나면 글을 따라갈 수 없다.
+//
+// attr()은 content 에서만 쓸 수 있어 counter-reset 에 넣지 못한다.
+// 그래서 값별 규칙을 빌드 시점에 펼친다. 테마의 ::before 스타일은 그대로 두므로
+// 글꼴·위치·색이 다른 목록과 완전히 같다.
+@for $i from 2 through 100 {
+  .main-content ol[start="#{$i}"] {
+    counter-reset: step-counter #{$i - 1};
+  }
+}
+
+// ============================================
+// 「확인」 절 목록 — 불릿을 지운다
+// ============================================
+// 항목마다 앞에 원문자(①②③)가 붙어 있어서 테마 기본 불릿과 마커가 두 겹으로 보인다.
+// 체크박스(`- [ ]`)를 쓰던 자리인데 kramdown이 disabled 상태로 렌더해
+// 누를 수 없는 채로 보이기만 해서 2026-08-14에 걷어냈다. 그 자리에 원문자만 남긴다.
+//
+// IAL은 목록 **바로 뒤**에 빈 줄 없이 놓아야 <ul>에 붙는다.
+// 앞에 놓거나 빈 줄을 끼우면 조용히 무시된다({: .note }와 반대라 헷갈리기 쉽다).
+.main-content ul.checklist {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+
+  > li::before {
+    content: none; // 테마가 ::before로 그리는 불릿까지 지운다
+  }
+}

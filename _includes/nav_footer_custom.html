@@ -1,0 +1,18 @@
+{%- comment -%}
+  좌측 사이드바 맨 아래 콜로폰 (2026-08-26).
+
+  테마 기본값은 영문 한 줄이었다 —
+  "This site uses Just the Docs, a documentation theme for Jekyll."
+  그 자리를 이 파일이 대신한다. 테마 크레딧은 그대로 두고 소스 출처를 얹었다.
+
+  이 include 는 테마가 두 군데서 부른다 — 데스크톱은 `components/sidebar.html`,
+  모바일은 `components/footer.html` 의 `d-md-none` 블록. **양쪽에 보이는 유일한 자리**다.
+  헤더 우상단의 `aux_links` 는 `md` 미만에서 `.main-header { display: none }` 이라
+  메뉴를 열어야 보인다. 그래서 둘을 같이 둔다.
+
+  ⚠️ 「이 페이지 편집」(`gh_edit_link`)은 쓰지 않는다. 공개 저장소는 미러이고
+     동기화할 때마다 정본으로 덮어쓴다 — 거기서 고친 것은 다음 sync 에서 사라진다.
+     그래서 문구도 「편집」이 아니라 「소스」다.
+{%- endcomment -%}
+이 사이트의 소스는 <a href="https://github.com/JM-2ktech/cs_lab">GitHub</a>에 있습니다.
+<a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a> 테마로 만들었습니다.

@@ -1,6 +1,5 @@
 ---
 title: 중급 Lab 4. 적재 흐름
-parent: 중급 — HR 채용 자동화
 nav_order: 5
 ---
 
@@ -59,13 +58,13 @@ flowchart LR
 
 ## 준비
 
-> [박도윤 지원자 이력서 샘플](../../assets/advanced/download/추가이력서샘플/박도윤.pdf)
+> [박도윤 지원자 이력서 샘플](../assets/download/추가이력서샘플/박도윤.pdf)
 >
-> [송지훈 지원자 이력서 샘플](../../assets/advanced/download/추가이력서샘플/송지훈.pdf)
+> [송지훈 지원자 이력서 샘플](../assets/download/추가이력서샘플/송지훈.pdf)
 >
-> [이진우 지원자 이력서 샘플](../../assets/advanced/download/추가이력서샘플/이진우.pdf)
+> [이진우 지원자 이력서 샘플](../assets/download/추가이력서샘플/이진우.pdf)
 >
-> [이하나 지원자 이력서 샘플](../../assets/advanced/download/추가이력서샘플/이하나.pdf)
+> [이하나 지원자 이력서 샘플](../assets/download/추가이력서샘플/이하나.pdf)
 
 테스트용 **신규 지원자 이력서 PDF**(시드 42명과 다른 인물)를 내려받아 둡니다.
 
@@ -75,19 +74,19 @@ flowchart LR
 
 1. 브라우저에서 Outlook(`https://outlook.office.com`)을 엽니다.
 
-    ![Outlook 메일함](../../assets/advanced/lab4/01.png)
+    ![Outlook 메일함](../assets/lab4/01.png)
 
 2. 왼쪽 폴더 영역에서 **새 폴더**를 만들고 이름을 `채용지원[샘플]`로 지정합니다.
 
-    ![새 폴더 만들기 메뉴](../../assets/advanced/lab4/02.png)
+    ![새 폴더 만들기 메뉴](../assets/lab4/02.png)
 
-    ![채용지원[샘플] 폴더 완성](../../assets/advanced/lab4/02b.png)
+    ![채용지원[샘플] 폴더 완성](../assets/lab4/02b.png)
 
 3. 오른쪽 위 **설정(톱니)** → **메일** → **규칙** → **+ 새 규칙 추가**를 클릭합니다.
 
-    ![Outlook 설정 → 메일 → 규칙](../../assets/advanced/lab4/03.png)
+    ![Outlook 설정 → 메일 → 규칙](../assets/lab4/03.png)
 
-    ![이름·조건·작업 입력](../../assets/advanced/lab4/03b.png)
+    ![이름·조건·작업 입력](../assets/lab4/03b.png)
 4. 규칙을 아래처럼 설정하고 **저장**합니다. (`[이력서샘플]` 제목 메일이 자동으로 폴더로 들어가 흐름이 발화합니다.)
 
     - **이름**: `이력서 샘플 분리 규칙`
@@ -96,48 +95,48 @@ flowchart LR
 
     
 
-    ![폴더 선택 — 채용지원[샘플]](../../assets/advanced/lab4/04.png)
-    ![CS 흐름 — + 새 에이전트 흐름](../../assets/advanced/lab4/04b.png)
+    ![폴더 선택 — 채용지원[샘플]](../assets/lab4/04.png)
+    ![CS 흐름 — + 새 에이전트 흐름](../assets/lab4/04b.png)
     {: .note }
     "이 메일이 지원 메일인가?"를 흐름이 판단하지 않습니다. **분류는 Outlook 규칙(상류)**이 하고, 폴더에 들어온 것은 이미 지원 메일이라고 신뢰합니다 — 그래서 흐름이 단순해집니다.
 
 5. Copilot Studio 왼쪽 메뉴 **흐름**에서 **+ 새 에이전트 흐름**을 클릭합니다. (이름은 저장할 때 붙입니다.)
 
     
-    ![트리거 검색 — 새 메일이](../../assets/advanced/lab4/05.png)
+    ![트리거 검색 — 새 메일이](../assets/lab4/05.png)
 
 6. 트리거 검색창에 `새 메일이`를 입력하고 Office 365 Outlook **새 메일이 도착하면 (V3)**을 선택합니다.
 
 
-    ![새 메일이 도착하면(V3) 선택](../../assets/advanced/lab4/06.png)
+    ![새 메일이 도착하면(V3) 선택](../assets/lab4/06.png)
 
 7. **연결**을 본인 계정(본인 메일)으로 연결합니다.
 
-    ![트리거 고급 매개 변수 — 첨부파일·폴더 설정](../../assets/advanced/lab4/07.png)
+    ![트리거 고급 매개 변수 — 첨부파일·폴더 설정](../assets/lab4/07.png)
 
 8. 트리거 고급 매개 변수를 펼쳐 설정합니다. **폴더** = `채용지원[샘플]`, **첨부 파일 포함** = 예, **첨부 파일이 있는 항목만** = 예.
 
-    ![트리거 고급 매개 변수](../../assets/advanced/lab4/08.png)
-    ![첨부파일·폴더 설정](../../assets/advanced/lab4/08b.png)
+    ![트리거 고급 매개 변수](../assets/lab4/08.png)
+    ![첨부파일·폴더 설정](../assets/lab4/08b.png)
 
     {: .important }
     **폴더 = 채용 전용 폴더**여야 일반 업무 메일이 흐름을 깨우지 않습니다. **첨부 파일 포함 = 예**여야 다음 단계에서 PDF 내용을 읽습니다.
 
 9. 오른쪽 위 **저장**을 클릭하고, 이름 입력 창에 `적재 흐름`을 입력합니다.
 
-    ![촬영: 흐름 이름 = 적재 흐름](../../assets/advanced/lab4/09.png)
+    ![촬영: 흐름 이름 = 적재 흐름](../assets/lab4/09.png)
 
 10. 트리거 아래 **+ 작업 추가** → [AI Builder](./glossary.html#term-ai-builder) **프롬프트 실행**을 추가합니다.
 
-    ![촬영: AI Builder '프롬프트 실행' 추가](../../assets/advanced/lab4/10.png "lab4-10")
+    ![촬영: AI Builder '프롬프트 실행' 추가](../assets/lab4/10.png "lab4-10")
 
 11. AI Builder **연결**을 본인 계정으로 연결합니다.
 
-    ![촬영: AI Builder 연결](../../assets/advanced/lab4/11.png "lab4-11")
+    ![촬영: AI Builder 연결](../assets/lab4/11.png "lab4-11")
 
 12. **프롬프트** 드롭다운에서 **새 사용자 지정 프롬프트**를 선택합니다. 이후 지침에 아래 내용을 넣습니다. (이 프롬프트의 내용은 아래 참조)
 
-    ![촬영: 이력서 요약 프롬프트 선택](../../assets/advanced/lab4/12.png "lab4-12")
+    ![촬영: 이력서 요약 프롬프트 선택](../assets/lab4/12.png "lab4-12")
 
     {: .note }
     **제공 프롬프트 내용 (참조)** — 비정형 이력서 → 정형 필드로 변환하는 추출기입니다.
@@ -157,23 +156,23 @@ flowchart LR
 
     이후 프롬프트의 이름을 입력합니다.
 
-    ![촬영: 이력서 요약 프롬프트 선택](../../assets/advanced/lab4/12b.png "lab4-12")
+    ![촬영: 이력서 요약 프롬프트 선택](../assets/lab4/12b.png "lab4-12")
 
 13. 지침 아래쪽에 커서를 위치하고 `이력서 원본 :` 을 타이핑합니다. 이어서 `/`를 입력하면 나타나는 목록에서 **이미지 또는 문서**를 선택합니다.
 
-    ![프롬프트 입력 추가 — 이미지 또는 문서 선택](../../assets/advanced/lab4/13b.png "lab4-13")
+    ![프롬프트 입력 추가 — 이미지 또는 문서 선택](../assets/lab4/13b.png "lab4-13")
 
-    **문서 입력** 패널에서 **이름**을 `Resume`로 지정합니다. **샘플 데이터**에 [이력서 샘플](../../assets/advanced/download/추가이력서샘플/박도윤.pdf)을 업로드해 두면 다음 단계에서 바로 테스트해 볼 수 있습니다.
+    **문서 입력** 패널에서 **이름**을 `Resume`로 지정합니다. **샘플 데이터**에 [이력서 샘플](../assets/download/추가이력서샘플/박도윤.pdf)을 업로드해 두면 다음 단계에서 바로 테스트해 볼 수 있습니다.
 
-    ![문서 입력 — 이름 Resume · 샘플 데이터 업로드](../../assets/advanced/lab4/13c.png "lab4-13")
+    ![문서 입력 — 이름 Resume · 샘플 데이터 업로드](../assets/lab4/13c.png "lab4-13")
 
     지침에 `Resume` 칩이 삽입된 모습입니다.
 
-    ![지침에 삽입된 Resume 칩](../../assets/advanced/lab4/13.png "lab4-13")
+    ![지침에 삽입된 Resume 칩](../assets/lab4/13.png "lab4-13")
 
     이후 **출력**을 **JSON**으로 변경하고 **테스트**로 결과를 확인한 뒤, 저장해서 디자이너로 돌아옵니다.
 
-    ![출력 JSON 변경 · 테스트 실행](../../assets/advanced/lab4/13d.png "lab4-13")
+    ![출력 JSON 변경 · 테스트 실행](../assets/lab4/13d.png "lab4-13")
 
     <!-- 저작 메모(학생 비노출):
          2026-07-28 — 13번 재구성. 구 13b(문서 입력 패널, 강조 없음) → 13z 폐기·삭제, 구 13c → 13d.
@@ -186,17 +185,17 @@ flowchart LR
     
 
 14. 디자이너 화면에서 `Resume`라는 필수 입력필드가 추가되었습니다. 여기에 첨부파일을 입력해야합니다. `새 메일이 도착하면 (V3)`의 `첨부파일 콘텐츠`를 지정합니다.
-    ![촬영: Resume 칩 지정](../../assets/advanced/lab4/14.png "lab4-14")
-    ![촬영: Resume 칩 지정](../../assets/advanced/lab4/14b.png "lab4-14")
-    ![촬영: Resume 칩 지정](../../assets/advanced/lab4/14c.png "lab4-14")
+    ![촬영: Resume 칩 지정](../assets/lab4/14.png "lab4-14")
+    ![촬영: Resume 칩 지정](../assets/lab4/14b.png "lab4-14")
+    ![촬영: Resume 칩 지정](../assets/lab4/14c.png "lab4-14")
 
 15. 첨부파일은 이메일에 여러개가 있을수 있기때문에 콘텐츠 칩 추가 후 For each가 추가된 걸 확인할 수 있습니다.
     For each 내부의 노드 추가를 통해 앞으로 두 가지의 작업을 수행합니다 `파일 만들기` `항목 만들기`
-    ![촬영: For each 추가](../../assets/advanced/lab4/15.png "lab4-15")
+    ![촬영: For each 추가](../assets/lab4/15.png "lab4-15")
 
 16. `Sharepoint` > `파일 만들기`를 클릭합니다. **사이트 주소** 드롭다운에서 **`M365 Copilot GO+프로그램 (Teams/CJ올리브네트웍스)`** 를 고릅니다.
 
-    ![SharePoint > 파일 만들기 선택](../../assets/advanced/lab4/16.png)
+    ![SharePoint > 파일 만들기 선택](../assets/lab4/16.png)
 
     {: .important }
     **사이트 주소는 환경 변수를 쓰지 않습니다.** 환경 변수(`SPSiteUrl`)가 더 깔끔해 보이지만, Copilot Studio가 그 값을 **늦게 인식하거나 아예 못 읽는 경우**가 있습니다. 실습 중에 원인 찾기 어려운 오류로 이어지므로, 오늘은 **전 랩에서 사이트를 직접 지정**합니다. 드롭다운에 안 보이면 아래 URL을 그대로 입력하세요.
@@ -206,7 +205,7 @@ flowchart LR
 
 17. 폴더 경로는 `DocLib` > `이력서 샘플` 을 지정합니다.
 
-    ![폴더 경로 — 이력서 샘플](../../assets/advanced/lab4/17.png)
+    ![폴더 경로 — 이력서 샘플](../assets/lab4/17.png)
 
 18. **파일 이름** 칸의 **fx**를 열고 아래 식을 붙여넣은 뒤 **추가**합니다.
 
@@ -214,27 +213,27 @@ flowchart LR
     concat(formatDateTime(utcNow(),'yyyyMMdd_HHmmss'), '_', substring(guid(),0,8), slice(item()?['name'], lastIndexOf(item()?['name'], '.')))
     ```
 
-    ![파일 이름 수식 입력](../../assets/advanced/lab4/18.png)
+    ![파일 이름 수식 입력](../assets/lab4/18.png)
 
     {: .important }
     **원본 파일명을 쓰지 않습니다.** 원본 파일명의 공백이나 한글이 있으면 링크가 잘 작동하지 않을 확률이 있습니다. `{수신시각}_{GUID8}{확장자}`로 공백 없는 고유명을 만듭니다. 중복된 파일명이 없도록 Guid를 사용합니다.
 
 19. **파일 콘텐츠** 칸에 `/`를 입력하고 트리거의 **첨부 파일 콘텐츠**를 넣습니다. (동적 콘텐츠에서 트리거 항목 **더 보기**를 눌러야 보입니다.)
 
-    ![파일 만들기 완성 — 사이트·폴더·파일명·콘텐츠](../../assets/advanced/lab4/19.png)
+    ![파일 만들기 완성 — 사이트·폴더·파일명·콘텐츠](../assets/lab4/19.png)
 
 
 20. 반복 안에 **+ 작업 추가** → SharePoint **항목 만들기**를 추가합니다.
 
-    ![촬영: SharePoint 항목 만들기 추가](../../assets/advanced/lab4/20.png)
+    ![촬영: SharePoint 항목 만들기 추가](../assets/lab4/20.png)
 
 21. **사이트 주소** 드롭다운에서 **`M365 Copilot GO+프로그램 (Teams/CJ올리브네트웍스)`** 를 고르고, **목록 이름** = **본인 지원자 목록**을 선택합니다.
 
-    ![사이트 주소·목록 이름 선택](../../assets/advanced/lab4/21.png)
+    ![사이트 주소·목록 이름 선택](../assets/lab4/21.png)
 
 22. 고급 매개 변수를 확장하여 필요한 데이터를 편집합니다. 제목, 지원자이름, 이메일, 지원직군, 경력사항, 이력서요약, 이력서링크를 체크합니다.
 
-    ![고급 매개 변수 — 컬럼 체크박스 목록](../../assets/advanced/lab4/22.png)
+    ![고급 매개 변수 — 컬럼 체크박스 목록](../assets/lab4/22.png)
 
     {: .note }
     **제목을 포함해 여기서 체크한 컬럼만 입력 칸으로 나타납니다.** 이어지는 23~29번은 이렇게 나타난 칸을 하나씩 채우는 과정입니다.
@@ -248,15 +247,15 @@ flowchart LR
     {: .note }
     **이 식이 하는 일** — 오늘 날짜와 AI가 뽑은 이름·직군을 이어 붙여 제목을 만듭니다. 결과는 `[2026-07-28]홍길동_IT/개발` 같은 모양이 됩니다. 목록에서 **정렬하면 접수일 순**이 되고, 제목만 봐도 누가 어느 직군인지 보입니다.
 
-    ![제목 수식 fx 편집기 — concat 수식 + 동적 콘텐츠 패널](../../assets/advanced/lab4/23.png)
+    ![제목 수식 fx 편집기 — concat 수식 + 동적 콘텐츠 패널](../assets/lab4/23.png)
 
 24. **지원자이름** 칸에 `/` → `지원자명` 칩을 넣습니다.
 
-    ![지원자이름 = 지원자명 칩](../../assets/advanced/lab4/24.png)
+    ![지원자이름 = 지원자명 칩](../assets/lab4/24.png)
 
 25. **이메일** 칸에 `/` → `시작` 칩을 넣습니다.
 
-    ![이메일 = 시작(발신자) 칩 — 동적 콘텐츠 패널](../../assets/advanced/lab4/25.png)
+    ![이메일 = 시작(발신자) 칩 — 동적 콘텐츠 패널](../assets/lab4/25.png)
 
     {: .warning }
     Email 칸에 입력하는 이메일은 AI 요약결과의 이메일이 원칙이지만 현재 승인 거절 이메일 발송 테스트로 작업하기때문에 메일 발송자로 지정합니다.
@@ -265,15 +264,15 @@ flowchart LR
 
 26. **지원직군** 칸에 `/` → `지원직군` 칩을 넣습니다.
 
-    ![지원직군 = 지원직군 칩](../../assets/advanced/lab4/26.png)
+    ![지원직군 = 지원직군 칩](../assets/lab4/26.png)
 
 27. **경력사항** 칸에 `/` → `경력사항` 칩을 넣습니다. (프롬프트가 신입/1~3년/3~5년/5년이상 중 하나로 고정 출력 → 선택 컬럼과 일치)
 
-    ![경력사항 Value = 경력사항 칩](../../assets/advanced/lab4/27.png)
+    ![경력사항 Value = 경력사항 칩](../assets/lab4/27.png)
 
 28. **이력서요약** 칸에 `/` → `이력서요약` 칩을 넣습니다.
 
-    ![이력서요약 = 이력서요약 칩](../../assets/advanced/lab4/28.png)
+    ![이력서요약 = 이력서요약 칩](../assets/lab4/28.png)
 
 29. **이력서링크** 칸의 **fx**를 열고 아래 식을 입력합니다. (사이트 URL + 파일 만들기가 반환한 경로)
 
@@ -281,33 +280,33 @@ flowchart LR
     concat('https://cjworld.sharepoint.com/teams/M365CopilotGOTeamsCJ', outputs('파일_만들기')?['body/Path'])
     ```
 
-    ![이력서링크 fx — concat(사이트 URL, 파일_만들기 Path)](../../assets/advanced/lab4/29.png)
+    ![이력서링크 fx — concat(사이트 URL, 파일_만들기 Path)](../assets/lab4/29.png)
 
     {: .note }
     **ReviewStatus(전형단계)·AIFitLevel·OnHold(보류)는 매핑하지 않습니다** — 각각 컬럼 기본값(검토중 / 미적용 / false)으로 시작하고, 이후 단계가 채웁니다.
 30. AI적합도, 요약승인상태, 전형단계 등은 기본값을 사용합니다. (기본값으로 정의된 데이터는 지정하지 않아도 됩니다)
-    ![항목 생성 최종)](../../assets/advanced/lab4/30.png)
+    ![항목 생성 최종)](../assets/lab4/30.png)
 
 
 31. 오른쪽 위 **저장**을 클릭합니다. 이후 **게시**를 클릭합니다
 
-    ![촬영: 흐름 저장](../../assets/advanced/lab4/31.png)
+    ![촬영: 흐름 저장](../assets/lab4/31.png)
 
 
 32. 이후 메일을 발송합니다. 준비한 **이력서 PDF**를 첨부하고 제목을 `[이력서샘플] 홍길동`처럼 해서 **내 메일로 보냅니다.**
 
-    ![촬영: [이력서샘플] 제목 + PDF 첨부 메일 발송](../../assets/advanced/lab4/32.png)
+    ![촬영: [이력서샘플] 제목 + PDF 첨부 메일 발송](../assets/lab4/32.png)
 
     {: .note }
     규칙이 적용되지 않아 트리거 발화가 안되면 받은 편지함에서 그 메일을 `채용지원[샘플]` 폴더로 직접 끌어다 넣으세요.
 
 33. 흐름의 **실행 기록**에서 성공으로 수행했는지 확인합니다.
 
-    ![촬영: 흐름 실행 성공 기록](../../assets/advanced/lab4/33.png)
+    ![촬영: 흐름 실행 성공 기록](../assets/lab4/33.png)
 
 34. **본인 지원자 목록**을 열어 **새 항목**이 생겼는지 확인합니다(요약·링크 채워짐, 상태 **보류 중**).
 
-    ![촬영: 본인 목록 새 항목(요약승인상태: 승인대기, 전형단계: 검토중)](../../assets/advanced/lab4/34.png)
+    ![촬영: 본인 목록 새 항목(요약승인상태: 승인대기, 전형단계: 검토중)](../assets/lab4/34.png)
 
 ---
 
