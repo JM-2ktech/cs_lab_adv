@@ -18,6 +18,7 @@ bundle exec jekyll serve
 bundle exec jekyll build
 python _instructions/linkcheck.py
 python _instructions/stylecheck.py
+python ../_tools/sync_infra.py    # 공유 인프라가 cs_lab 과 어긋나지 않았는지
 ```
 
 ## ⚠️ 배포하지 않습니다
