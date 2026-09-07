@@ -130,7 +130,8 @@ bundle exec jekyll build
 python _instructions/linkcheck.py     # ADVANCED · OTHER · step numbering 셋 다 0
 ```
 
-그리고 커밋한다. **랩 단위로 끊는다.**
+그리고 커밋한다. **랩 단위로 끊고, `main` 에 바로 밀지 않는다** — `shoot/labN` 브랜치를 파서 PR 로 낸다.
+제작자가 같은 문서의 본문 교정을 따로 진행하고 있다.
 
 ```
 docs(lab7): 조건 게이트 컷 4장을 다시 찍는다
