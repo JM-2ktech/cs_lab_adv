@@ -44,6 +44,22 @@ python _instructions/stylecheck.py    # 현재 62점(C). 떨어뜨리지 않는�
 
 ## 함께 봐야 하는 것들
 
+**`docs/lab4.md` 는 2026-09-07 부터 비활성이다. `docs/lab4-alt.md` 가 Lab 4 본편이다.**
+차기 고객사가 Outlook 을 쓰지 않아 메일 트리거 판을 학생 동선에서 뺐다. **일시적이다 — 되돌릴 것을 전제로 한다.**
+
+| 무엇을 했나 | 어디 |
+|---|---|
+| `nav_exclude` · `search_exclude` | `lab4.md` frontmatter — 좌측 메뉴와 상단 검색에서만 사라진다 |
+| `nav_order` 5 로 승격 · title 에서 「-대안」 제거 | `lab4-alt.md` frontmatter |
+| Lab 4 링크를 `lab4-alt.html` 로 · 「↳ 대안」 행과 Outlook 안내 콜아웃 삭제 | `index.md` |
+| 2부 합계 2시간 50분 → **2시간 40분**, 총 220분 → **210분** | `index.md` · `README.md` |
+
+**파일도 URL 도 살아 있다.** `docs/lab4.html` 로 직접 들어가면 그대로 보인다 — 강사용 경로다.
+되살리는 절차와 종전 값은 두 파일의 저작 메모 첫머리에 적어 두었다.
+
+**남은 것** — `lab4-alt.md` 본문에 「원본 Lab 4」·「대안」 표현이 넷 남아 있다. 숨긴 랩을 가리키는 말이라
+전환이 확정되면 같이 손본다. 지금 고치면 되돌릴 때 두 번 일한다.
+
 **`docs/lab4.md` 와 `docs/lab4-alt.md` 는 짝이다.** 본문 블록 20개를 공유한다 — 한쪽만 고치면 어긋난다.
 게다가 **정본이 뒤집힐 예정이다**(차기 고객사가 Outlook 미사용 → alt 가 본문이 된다).
 
