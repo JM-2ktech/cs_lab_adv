@@ -1,15 +1,9 @@
 _site/
 .jekyll-cache/
-
-# 내부 저작 가이드·컨텍스트 (로컬 전용 — 공개 저장소에 고객사명·회차 정보를 올리지 않음)
-# ⚠️ 아래 셋은 백업 대상이다. clone하면 따라오지 않는다.
-_instructions/
-CLAUDE.md
-.claude/skills/
 .jekyll-metadata
 vendor/
 .bundle/
 .sass-cache/
 
-# humanize-korean 작업 산출물 (로컬 전용 — 백업 대상 아님, 언제든 재생성)
+# 로컬 전용 — 백업 대상 아님, 언제든 재생성
 _workspace/
