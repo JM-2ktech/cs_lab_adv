@@ -10,7 +10,7 @@ nav_order: 6
 
 <!-- 저작 메모(학생 비노출):
      - 근거: 업로드 솔루션 `HR_LAB4_Trigger_Alternate_1_0_0_1.zip` 리버스 엔지니어링(2026-07-01).
-     - 목적: Outlook을 쓸 수 없는 수강생(CJ 환경 등)을 위한 Lab 4 대안. 원본 Lab 4(메일 트리거)와 결과물은 동일 — SP 지원자 목록에 항목 1건 적재.
+     - 목적: Outlook을 쓸 수 없는 수강생(고객사 환경 등)을 위한 Lab 4 대안. 원본 Lab 4(메일 트리거)와 결과물은 동일 — SP 지원자 목록에 항목 1건 적재.
      - 트리거 차이: Request/Button kind, 입력 2개(file=이력서원본, email=이메일) — Power Automate "수동으로 흐름 트리거"에 커스텀 입력 추가한 형태.
      - 구조 차이: 원본은 메일 첨부파일 배열 → For each 자동 생성. 대안은 트리거가 파일 1개만 주므로 **For each 없이 프롬프트_실행 → 파일_만들기 → 항목_만들기 직결**.
      - 이메일 필드: 원본은 "시작"(발신자) 칩을 억지로 씀(경고 문구 있음). 대안은 트리거 입력값을 그대로 써서 더 정확함 — 별도 경고 불필요.
@@ -170,14 +170,14 @@ flowchart LR
     {: .warning }
     **여기서 For each가 생기지 않습니다.** 원본 Lab 4는 메일 첨부파일이 배열이라 자동으로 반복이 생겼지만, 이 트리거의 `이력서원본`은 파일 1개짜리 단일 값입니다. 반복 없이 다음 작업으로 바로 이어집니다.
 
-10. `Sharepoint` > `파일 만들기`를 클릭합니다. **사이트 주소** 드롭다운에서 **`M365 Copilot GO+프로그램 (Teams/CJ올리브네트웍스)`** 를 고릅니다.
+10. `Sharepoint` > `파일 만들기`를 클릭합니다. **사이트 주소** 드롭다운에서 **`에듀랩`** 를 고릅니다.
 
     ![SharePoint > 파일 만들기 선택](../assets/lab4/16.png)
 
     {: .important }
     **사이트 주소는 환경 변수를 쓰지 않습니다.** 환경 변수(`SPSiteUrl`)가 더 깔끔해 보이지만, Copilot Studio가 그 값을 **늦게 인식하거나 아예 못 읽는 경우**가 있습니다. 실습 중에 원인 찾기 어려운 오류로 이어지므로, 오늘은 **전 랩에서 사이트를 직접 지정**합니다. 드롭다운에 안 보이면 아래 URL을 그대로 입력하세요.
     ```
-    https://cjworld.sharepoint.com/teams/M365CopilotGOTeamsCJ
+    https://2ktech.sharepoint.com/sites/edulab
     ```
 
 11. 폴더 경로는 `DocLib` > `이력서 샘플` 을 지정합니다.
@@ -206,7 +206,7 @@ flowchart LR
 
     ![촬영: SharePoint 항목 만들기 추가](../assets/lab4/20.png)
 
-15. **사이트 주소** 드롭다운에서 **`M365 Copilot GO+프로그램 (Teams/CJ올리브네트웍스)`** 를 고르고, **목록 이름** = **본인 지원자 목록**을 선택합니다.
+15. **사이트 주소** 드롭다운에서 **`에듀랩`** 를 고르고, **목록 이름** = **본인 지원자 목록**을 선택합니다.
 
     ![사이트 주소·목록 이름 선택](../assets/lab4/21.png)
 
@@ -254,7 +254,7 @@ flowchart LR
 23. **이력서링크** 칸의 **fx**를 열고 아래 식을 입력합니다. (사이트 URL + 파일 만들기가 반환한 경로)
 
     ```
-    concat('https://cjworld.sharepoint.com/teams/M365CopilotGOTeamsCJ', outputs('파일_만들기')?['body/Path'])
+    concat('https://2ktech.sharepoint.com/sites/edulab', outputs('파일_만들기')?['body/Path'])
     ```
 
     ![이력서링크 fx — concat(사이트 URL, 파일_만들기 Path)](../assets/lab4/29.png)

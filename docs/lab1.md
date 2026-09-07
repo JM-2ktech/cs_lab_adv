@@ -35,7 +35,7 @@ nav_order: 2
      Power Automate · Copilot Studio · SharePoint 사이트 접근 · 환경 메이커(Environment Maker).
      ★ SP 콘텐츠 승인(Approve) 권한은 불필요하다 — 그 권한이 사이트 관리자급이라 교육 대상자에게 주기 어려워서
        SP 내장 승인을 버리고 별도 Choice 컬럼(요약승인상태)으로 전환한 것이다. 상세는 lab5.md 저작 메모 참조.
-     ★ 2026-07-28: 환경 변수(SPSiteUrl) 사용 폐기 → 사이트 주소는 전 랩에서 값 직접 입력(https://cjworld.sharepoint.com/teams/M365CopilotGOTeamsCJ).
+     ★ 2026-07-28: 환경 변수(SPSiteUrl) 사용 폐기 → 사이트 주소는 전 랩에서 값 직접 입력(https://2ktech.sharepoint.com/sites/edulab).
        사유: CS가 환경 변수 값을 늦게 인식하거나 못 읽는 사례 다수. 시티즌 대상은 안정성 우선.
      ★ 실행 UI 라벨(테스트→수동→실행)은 촬영 시 최종 확인. -->
 
@@ -103,7 +103,7 @@ nav_order: 2
 
 8. 새 탭에서 교육용 **SharePoint 사이트**로 이동해 내 **지원자** 리스트를 엽니다. 행이 **42개** 채워져 있는지 확인합니다.
 
-    [M365 Copilot Go+ 프로그램 쉐어포인트 사이트컨텐츠 링크](https://cjworld.sharepoint.com/teams/M365CopilotGOTeamsCJ/_layouts/15/viewlsts.aspx)
+    [에듀랩 SharePoint 사이트 콘텐츠 링크](https://2ktech.sharepoint.com/sites/edulab/_layouts/15/viewlsts.aspx)
 
     ![실행 성공 — 각 단계 초록 체크](../assets/lab1/08.png)
 

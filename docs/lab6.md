@@ -92,7 +92,7 @@ flowchart LR
 
     ![작업 추가 — 항목 가져오기(2개 이상) 선택](../assets/lab6/04.png)
 
-    **사이트 주소** 드롭다운에서 **`M365 Copilot GO+프로그램 (Teams/CJ올리브네트웍스)`** 를 고르고, **목록 이름** = 본인 [목록](./glossary.html#term-list)으로 지정합니다. (드롭다운에 없으면 `https://cjworld.sharepoint.com/teams/M365CopilotGOTeamsCJ` 직접 입력)
+    **사이트 주소** 드롭다운에서 **`에듀랩`** 를 고르고, **목록 이름** = 본인 [목록](./glossary.html#term-list)으로 지정합니다. (드롭다운에 없으면 `https://2ktech.sharepoint.com/sites/edulab` 직접 입력)
 
 
     ![항목 가져오기 — 사이트·목록 지정](../assets/lab6/04b.png)

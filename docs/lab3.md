@@ -70,14 +70,14 @@ Lab 2에서 만든 **면접관 에이전트**를 엽니다. 지금은 기준(지
 
     {: .important }
     사용할 자격 증명 옵션을 `작성자가 제공한 자격 증명`으로 변경시 개발 단계, 테스트시에 용이합니다. 실제 운영시에는 `최종 사용자 자격 증명`으로 변경 후 배포합니다.
-6. **입력** 탭에서 **Site Address**에 **`M365 Copilot GO+프로그램 (Teams/CJ올리브네트웍스)`** 를 지정합니다. 이어서 **List Name**도 Lab 1에서 만든 **본인 리스트**를 지정합니다.
+6. **입력** 탭에서 **Site Address**에 **`에듀랩`** 를 지정합니다. 이어서 **List Name**도 Lab 1에서 만든 **본인 리스트**를 지정합니다.
 
     ![입력 구성 b](../assets/lab3/06b.png)
 
     {: .important }
     **환경 변수(`SPSiteUrl`)는 쓰지 않습니다.** 환경 변수가 더 깔끔해 보이지만 Copilot Studio가 그 값을 **늦게 인식하거나 아예 못 읽는 경우**가 있어, 원인 찾기 어려운 오류로 이어집니다. 오늘은 **전 랩에서 사이트를 직접 지정**하고, 목록 이름만 본인 것으로 고릅니다. 목록에 사이트가 안 보이면 아래 URL을 그대로 입력하세요.
     ```
-    https://cjworld.sharepoint.com/teams/M365CopilotGOTeamsCJ
+    https://2ktech.sharepoint.com/sites/edulab
     ```
 
 

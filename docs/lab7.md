@@ -10,7 +10,7 @@ nav_order: 9
 
 <!-- 저작 메모(학생 비노출):
      - 전형단계 유효 값: 검토중/서류합격/불합격 (최종합격/면접합격은 Choice에 없음 — 지침 블록 필수)
-     - ApproveStatus = 커스텀 컬럼(Choice), Value = "승인됨" (CJ 환경. SP moderation 아님)
+     - ApproveStatus = 커스텀 컬럼(Choice), Value = "승인됨" (고객사 환경. SP moderation 아님)
      - 카드: TextBlock 단일 타입 수식 카드(FactSet 혼용 시 null bleeding → AdaptiveCardInvalid)
      - ID 조건부 필터: 세부정보→입력에서 AI적합도+ID 모두 추가. 동명이인은 오케스트레이터 front + 토픽 count=1 back 이중 방어
      - 모든 토픽 종료 필수 — 없으면 재귀 호출 발생
@@ -29,7 +29,7 @@ nav_order: 9
        둘 중 하나만 있으면 화면 번호가 1부터 다시 시작한다. VS Code 미리보기는 (1)을 글자로 보여주니 판정 기준으로 쓰지 말 것. -->
 
 {: .time }
-**60분 타이머.** [흐름](./glossary.html#term-flow)(단건 갱신)을 먼저 만들고, [토픽](./glossary.html#term-topic)(게이트·카드·[HITL](./glossary.html#abbr-hitl))을 짓습니다.
+**50분 타이머.** [흐름](./glossary.html#term-flow)(단건 갱신)을 먼저 만들고, [토픽](./glossary.html#term-topic)(게이트·카드·[HITL](./glossary.html#abbr-hitl))을 짓습니다.
 
 ---
 
@@ -113,7 +113,7 @@ Lab 6의 AI적합도 흐름은 이름만 받아 조회·검증·갱신을 **자�
 
     ![작업 추가 — 항목 업데이트 선택](../assets/lab7/06.png)
 
-7. **사이트 주소** 드롭다운에서 **`M365 Copilot GO+프로그램 (Teams/CJ올리브네트웍스)`** 를 고릅니다. **목록 이름** 칸에 본인 [목록](./glossary.html#term-list)을 선택합니다. (드롭다운에 없으면 `https://cjworld.sharepoint.com/teams/M365CopilotGOTeamsCJ` 직접 입력)
+7. **사이트 주소** 드롭다운에서 **`에듀랩`** 를 고릅니다. **목록 이름** 칸에 본인 [목록](./glossary.html#term-list)을 선택합니다. (드롭다운에 없으면 `https://2ktech.sharepoint.com/sites/edulab` 직접 입력)
 
 
     ![항목 업데이트 — 사이트 주소·목록 이름 설정](../assets/lab7/07.png)
@@ -225,7 +225,7 @@ Lab 6의 AI적합도 흐름은 이름만 받아 조회·검증·갱신을 **자�
 
     ![항목 가져오기 노드 추가 완성](../assets/lab7/23b.png)
 
-24. **개시** 메뉴에서 제작자의 자격증명을 설정하고, **입력** 메뉴에서 **사이트 주소**에 **`M365 Copilot GO+프로그램 (Teams/CJ올리브네트웍스)`** 를 지정합니다. **목록 이름** 칸에 본인 목록을 선택합니다. (사이트가 안 보이면 `https://cjworld.sharepoint.com/teams/M365CopilotGOTeamsCJ` 직접 입력)
+24. **개시** 메뉴에서 제작자의 자격증명을 설정하고, **입력** 메뉴에서 **사이트 주소**에 **`에듀랩`** 를 지정합니다. **목록 이름** 칸에 본인 목록을 선택합니다. (사이트가 안 보이면 `https://2ktech.sharepoint.com/sites/edulab` 직접 입력)
 
 
     ![개시 제작자 자격증명 + 사이트·목록 설정](../assets/lab7/24.png)

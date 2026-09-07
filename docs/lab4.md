@@ -14,7 +14,7 @@ nav_order: 5
      - AI 프롬프트: 환경 제공본 선택(현재 안) + 전문 reference로 노출. v1은 '새 사용자 지정 프롬프트' 직접 생성(u1-2 2~5단계)이므로
        직접 생성으로 살리려면 그 5단계를 12번에 삽입. 시간 압박으로 select로 압축.
      - 자동 Apply-to-each: 첨부 배열을 프롬프트 Resume에 연결하면 반복이 자동 생성됨(수동 추가 X). v1 검증.
-     - 사이트 참조 = 값 직접 입력(https://cjworld.sharepoint.com/teams/M365CopilotGOTeamsCJ). ResumeLink = concat('<site>', 파일만들기 Path).
+     - 사이트 참조 = 값 직접 입력(https://2ktech.sharepoint.com/sites/edulab). ResumeLink = concat('<site>', 파일만들기 Path).
        2026-07-28 환경 변수(SPSiteUrl) 폐기 — CS가 값을 늦게 인식/미인식하는 사례 때문. 전 랩 공통.
      - 컬럼: ReviewStatus(전형단계)·AIFitLevel(미적용)·OnHold(false)는 매핑 안 함 → 컬럼 기본값.
      - ⏱ 내부 실측 70분(나이브 진행) → 요령·버퍼로 60 목표. 오후 최대 오버런 리스크 랩. -->
@@ -193,14 +193,14 @@ flowchart LR
     For each 내부의 노드 추가를 통해 앞으로 두 가지의 작업을 수행합니다 `파일 만들기` `항목 만들기`
     ![촬영: For each 추가](../assets/lab4/15.png "lab4-15")
 
-16. `Sharepoint` > `파일 만들기`를 클릭합니다. **사이트 주소** 드롭다운에서 **`M365 Copilot GO+프로그램 (Teams/CJ올리브네트웍스)`** 를 고릅니다.
+16. `Sharepoint` > `파일 만들기`를 클릭합니다. **사이트 주소** 드롭다운에서 **`에듀랩`** 를 고릅니다.
 
     ![SharePoint > 파일 만들기 선택](../assets/lab4/16.png)
 
     {: .important }
     **사이트 주소는 환경 변수를 쓰지 않습니다.** 환경 변수(`SPSiteUrl`)가 더 깔끔해 보이지만, Copilot Studio가 그 값을 **늦게 인식하거나 아예 못 읽는 경우**가 있습니다. 실습 중에 원인 찾기 어려운 오류로 이어지므로, 오늘은 **전 랩에서 사이트를 직접 지정**합니다. 드롭다운에 안 보이면 아래 URL을 그대로 입력하세요.
     ```
-    https://cjworld.sharepoint.com/teams/M365CopilotGOTeamsCJ
+    https://2ktech.sharepoint.com/sites/edulab
     ```
 
 17. 폴더 경로는 `DocLib` > `이력서 샘플` 을 지정합니다.
@@ -227,7 +227,7 @@ flowchart LR
 
     ![촬영: SharePoint 항목 만들기 추가](../assets/lab4/20.png)
 
-21. **사이트 주소** 드롭다운에서 **`M365 Copilot GO+프로그램 (Teams/CJ올리브네트웍스)`** 를 고르고, **목록 이름** = **본인 지원자 목록**을 선택합니다.
+21. **사이트 주소** 드롭다운에서 **`에듀랩`** 를 고르고, **목록 이름** = **본인 지원자 목록**을 선택합니다.
 
     ![사이트 주소·목록 이름 선택](../assets/lab4/21.png)
 
@@ -277,7 +277,7 @@ flowchart LR
 29. **이력서링크** 칸의 **fx**를 열고 아래 식을 입력합니다. (사이트 URL + 파일 만들기가 반환한 경로)
 
     ```
-    concat('https://cjworld.sharepoint.com/teams/M365CopilotGOTeamsCJ', outputs('파일_만들기')?['body/Path'])
+    concat('https://2ktech.sharepoint.com/sites/edulab', outputs('파일_만들기')?['body/Path'])
     ```
 
     ![이력서링크 fx — concat(사이트 URL, 파일_만들기 Path)](../assets/lab4/29.png)
