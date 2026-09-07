@@ -1,11 +1,12 @@
 title: "Copilot Studio Lab — 중급"
 description: >-
   Copilot Studio 중급 교안. HR 채용 자동화를 소재로 커넥터·에이전트 흐름·
-  승인·토픽을 랩 7개(230분)로 다루는 2일차 과정입니다.
+  승인·토픽을 랩 7개(220분)로 다루는 2일차 과정입니다.
 
-# ⚠️ 아직 배포하지 않는다. 본문에 고객사명이 남아 있어 탈CJ 이전에는 공개 대상이 아니다.
+# 배포는 .github/workflows/pages.yml (Actions) 이 한다 — just-the-docs 는 gem 테마라
+# Pages 기본 빌드로는 안 올라간다. baseurl 은 워크플로가 실제 경로로 덮어쓴다.
 baseurl: "/cs_lab_adv"
-url: ""
+url: "https://jm-2ktech.github.io"
 
 theme: just-the-docs
 plugins:
@@ -57,6 +58,7 @@ callouts:
 exclude:
   - _instructions/
   - README.md
+  - CLAUDE.md
   - Gemfile
   - Gemfile.lock
   - vendor/
