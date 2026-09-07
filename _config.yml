@@ -8,6 +8,10 @@ description: >-
 baseurl: "/cs_lab_adv"
 url: "https://jm-2ktech.github.io"
 
+# 실습 환경 이름 — 회차·테넌트마다 바뀐다. 본문은 {{ site.lab_env }} 로만 참조한다.
+# 여기만 고치면 랩 본문이 따라온다. 스크린샷 속 글자는 따라오지 않는다 — 재촬영 대상이다.
+lab_env: "교육"
+
 theme: just-the-docs
 plugins:
   - jekyll-feed

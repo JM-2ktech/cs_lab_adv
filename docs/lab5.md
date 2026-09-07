@@ -17,7 +17,8 @@ nav_order: 7
        이 랩의 Approvals 커넥터는 '승인 카드 발송·응답 수신'만 담당하고, 결과 기록은 일반 항목 업데이트로 한다.
        (2026-07-31: 본 줄에 "Approve 권한 필요(고객사 요청서 #2)"라 적혀 있던 것을 정정. 전환 이전의 낡은 기술이었음)
      - 수강생 필요 권한/라이선스 = Power Automate · Copilot Studio · SharePoint 사이트 접근 · 환경 메이커(Environment Maker).
-     - 사이트 = 값 직접 입력(https://2ktech.sharepoint.com/sites/edulab). 승인 형식 = 표준 '승인/거부-첫번째로 응답'. (2026-07-28 환경 변수 폐기)
+     - 사이트 = 값 직접 입력(https://2ktech.sharepoint.com/sites/edulab). 승인 형식 = 표준 '승인/거부-첫번째로 응답'.
+     - 2026-09-07 본문의 환경 변수 언급 제거 — 사유는 lab1.md 메모.
      - 카드 Markdown 5규칙. 거부 사유 = comments 폴백(approverResponse 오참조 금지). HTML 메일은 별표 제거.
      - 비동기 HITL = 카드 UI 통제 불가(본문 md만) ↔ 대화형(Lab7)은 지침 강제.
        2026-07-28: 본 줄이 "대화형(Lab6)"으로 잘못 적혀 있던 것을 정정. 본문(:101, :208)은 대화형 HITL을 Lab 7로 지목한다. -->
@@ -73,12 +74,6 @@ Lab 4에서 적재한 **승인대기** 지원자가 있어야 합니다(없으�
 2. **사이트 주소** 드롭다운에서 **`에듀랩`** 를 고르고, **목록 이름**에 **본인 지원자 [목록](./glossary.html#term-list)**을 지정합니다.
 
     ![사이트 주소·목록 이름 지정](../assets/lab5/02.png)
-
-    {: .note }
-    Lab 4와 동일하게 **환경 변수를 쓰지 않습니다.** 드롭다운에 사이트가 안 보이면 아래 URL을 직접 입력하세요. 오늘 모든 랩에서 같은 사이트를 씁니다.
-    ```
-    https://2ktech.sharepoint.com/sites/edulab
-    ```
 
 3. 트리거 아래 **+ 동작 추가** → Approvals **승인 시작 및 대기**를 추가합니다.
 
