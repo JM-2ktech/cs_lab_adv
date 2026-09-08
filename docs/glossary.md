@@ -1,6 +1,6 @@
 ---
 title: 중급 부록. 용어집
-nav_order: 12
+nav_order: 13
 ---
 
 # 부록. 용어집 📚
@@ -46,4 +46,7 @@ nav_order: 12
 | <span id="term-json">**JSON**</span> | JSON(JavaScript Object Notation)은 시스템 간에 데이터를 주고받기 위해 사용하는 경량 데이터 형식입니다. 사람이 읽기 쉽고 컴퓨터가 처리하기 쉬워 Copilot Studio, Power Automate, API 연동 등에서 널리 사용됩니다. JSON은 `Key: Value` 구조를 기본으로 하며, 객체(`{}`)와 배열(`[]`)을 조합해 다양한 데이터를 표현합니다. [json.org](https://www.json.org/json-ko.html)|
 | <span id="term-mcp">**MCP (Model Context Protocol)**</span> | AI 에이전트가 외부 도구·데이터 소스에 표준 방식으로 연결하기 위한 오픈 프로토콜. 에이전트는 MCP 서버 URL 하나만 등록하면 그 서버가 제공하는 도구 전체를 쓸 수 있다. 부록에서 `https://learn.microsoft.com/api/mcp`를 등록하는 것만으로 MS Learn 문서 검색 기능 전체가 자가진단 에이전트의 도구가 되는 것이 그 예시다. Copilot Studio는 MCP 서버 연결을 공식 지원하며, 별도 커넥터 개발 없이 외부 기능을 빠르게 붙일 수 있다는 점이 장점이다. [Agent Extend Action MCP](https://learn.microsoft.com/microsoft-copilot-studio/agent-extend-action-mcp) |
 | <span id="term-a2a">**연결된 에이전트 / A2A (Agent-to-Agent)**</span> | 한 에이전트(오케스트레이터)가 다른 에이전트를 하위 에이전트로 등록하고, 사용자 요청에 따라 작업을 위임하는 패턴. Copilot Studio에서는 같은 환경의 CS 에이전트를 "연결된 에이전트"로 추가하거나, 외부에서 A2A 프로토콜로 구현된 에이전트를 연결할 수 있다. 부록의 자가진단 에이전트 → 면접관 에이전트 구조가 전자(CS 내부 연결)의 실습 예시다. 요청을 받은 오케스트레이터가 어떤 하위 에이전트를 호출할지를 **하위 에이전트의 설명(description)** 을 보고 자동으로 결정하므로, 설명을 명확하게 쓰는 것이 라우팅 정확도의 핵심이다. → [MS Learn: Add other agents overview](https://learn.microsoft.com/microsoft-copilot-studio/authoring-add-other-agents) |
+| <span id="term-publish">**게시 (Publish)**</span> | 편집 중인 에이전트의 내용을 실사용 버전에 반영하는 조작. 테스트 창의 미리보기는 게시 없이 동작하나, 채널에 연결된 에이전트는 게시된 버전으로 동작한다. 지침·지식·토픽·도구 연결을 변경할 때마다 수행하며, 채널 연결은 재수행하지 않는다 (부록) → [MS Learn: 에이전트 게시 기본](https://learn.microsoft.com/microsoft-copilot-studio/publication-fundamentals-publish-channels) |
+| <span id="term-channel">**채널 (Channel)**</span> | 에이전트를 사용할 위치를 지정하는 연결 지점. Teams 및 Microsoft 365 Copilot, 웹사이트 등이 있다. 이 과정에서는 「Teams 및 Microsoft 365 Copilot」 채널 하나를 연결하며, 이 채널이 Teams 설치와 Microsoft 365 Copilot `@`호출을 함께 제공한다. 팀 채널과 그룹 채팅에서는 최종 사용자 인증이 필요한 지식(SharePoint)을 사용할 수 없어 1:1 채팅만 지원된다 (부록) → [MS Learn: Teams 및 Microsoft 365 채널 연결](https://learn.microsoft.com/microsoft-copilot-studio/publication-add-bot-to-microsoft-teams) |
+| <span id="term-share">**공유 (Share)**</span> | 에이전트를 사용할 사용자를 지정하는 권한 부여. 대화만 허용하는 **사용자**와 편집까지 허용하는 **공동 작성자**로 나뉘며, 공동 작성자 권한은 Environment Maker 보안 역할을 요구한다. 에이전트를 공유해도 도구로 등록된 Power Automate 흐름은 공유되지 않으므로, 흐름은 Power Automate에서 소유자를 별도로 추가한다 (부록) → [MS Learn: 다른 사용자와 에이전트 공유](https://learn.microsoft.com/microsoft-copilot-studio/admin-share-bots) |
 

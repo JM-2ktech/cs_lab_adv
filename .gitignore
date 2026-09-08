@@ -7,3 +7,7 @@ vendor/
 
 # 로컬 전용 — 백업 대상 아님, 언제든 재생성
 _workspace/
+
+# stylecheck.py --facts 저장소 · 파이썬 캐시 — 재생성된다
+_instructions/.facts.json
+__pycache__/
